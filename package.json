@@ -1,0 +1,13 @@
+{
+  "name": "webvote",
+  "version": "1.0.0",
+  "description": "npm run; node app.js",
+  "main": "app.js",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "websocket": "^1.0.33",
+    "ws": "^7.4.2"
+  }
+}

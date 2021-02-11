@@ -1,0 +1,24 @@
+
+<section>
+	<div class="container-fluid">
+		<h1  class="text-center"> {{round.question}} </h1>
+
+		<!-- {{round}} -->
+
+		<table class="table table-striped">
+			<tr ng-repeat="o in round.options"> 
+				<td class="text-right"  style="width: 50%">
+					<h2>{{o.answer}}</h2>
+				</td>
+				<td  style="width: 50%">
+					<div class="progress"  style="height: 50px;">
+						<div class="progress-bar" role="progressbar" style="width: {{o.count / totalCounts * 100}}%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{o.count / totalCounts * 100}}%</div>
+					</div>
+					{{o.count}}
+				</td>
+			</tr>
+		</table>
+		
+	</div>
+
+</section>
