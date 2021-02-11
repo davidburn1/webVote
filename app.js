@@ -34,9 +34,9 @@ wss.on('connection', ws => {
   })
 
 
-const server = http.listen(80, function() {
+  
+var port  = process.env.PORT || 8080;  
+const server = http.listen(port, function() {
     console.log('listening on *:80');
 });
-
-
 
