@@ -5,6 +5,9 @@
   "main": "app.js",
   "author": "",
   "license": "ISC",
+  "scripts": {
+    "start": "node app.js"
+  },
   "dependencies": {
     "express": "^4.17.1",
     "websocket": "^1.0.33",
