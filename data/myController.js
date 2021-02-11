@@ -30,7 +30,9 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
 app.controller('mainController', function($scope, $location, $http) {
 	$scope.host = window.location.hostname;
-	$scope.url = 'ws://'+ $scope.host +':81/';
+	//$scope.url = 'ws://'+ $scope.host +':81/';
+	//$scope.url = 'ws://'+ $scope.host ;
+	$scope.url = location.origin.replace(/^http/, 'ws')
 
 	$scope.ws = new WebSocket($scope.url); 
 
