@@ -1,13 +1,21 @@
 {
   "name": "webvote",
   "version": "1.0.0",
-  "description": "npm run; node app.js",
+  "description": "npm start",
   "main": "app.js",
+  "scripts": {
+      "start": "node app.js"
+  },
+  "repository": {
+      "type": "git",
+      "url": ""
+  },
   "author": "",
   "license": "ISC",
-  "scripts": {
-    "start": "node app.js"
+  "bugs": {
+      "url": ""
   },
+  "homepage": "",
   "dependencies": {
     "express": "^4.17.1",
     "websocket": "^1.0.33",
