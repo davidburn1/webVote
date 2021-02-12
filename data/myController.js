@@ -28,10 +28,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
 
 
-app.controller('mainController', function($scope, $location, $http) {
+app.controller('mainController', function($scope, $interval, $location, $http) {
 	$scope.host = window.location.hostname;
-	//$scope.url = 'ws://'+ $scope.host +':81/';
-	//$scope.url = 'ws://'+ $scope.host ;
 	$scope.url = location.origin.replace(/^http/, 'ws')
 
 	$scope.ws = new WebSocket($scope.url); 
@@ -40,6 +38,17 @@ app.controller('mainController', function($scope, $location, $http) {
 		console.log("ws error, closing");
 		$scope.ws.close();
 	};
+
+	$scope.ping = function(){
+		console.log("ping");
+		console.log($scope.ws.readyState);
+		if ($scope.ws.readyState === WebSocket.OPEN){
+			$scope.ws.send("ping");
+		}
+	}
+
+	$scope.interval = $interval($scope.ping,30000);
+	//setInterval($scope.ping(), 4000);
 });
 
 

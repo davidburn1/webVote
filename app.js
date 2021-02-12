@@ -37,9 +37,14 @@ wss.broadcast = function broadcast(msg) {
 wss.on('connection', ws => {
   // runs for each new client connection
   ws.on('message', message => {
-    console.log("Received message", message)
-    //if (message == "next round") nextRound();
-    wss.broadcast(message);
+    if (message == "ping"){
+
+    } else {
+      console.log("Received message", message)
+      //if (message == "next round") nextRound();
+      wss.broadcast(message);
+    }
+
   })
     
   console.log("new connection");
